@@ -1,0 +1,1 @@
+export { PageWeather } from "./ui";
