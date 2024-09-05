@@ -2,22 +2,26 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { CONFIG_ROUTER_PATHS } from "src/config";
 
+import "./style.css";
+
 export const PanelNavigate: FC = () => (
-  <div>
-    <nav>
-      <ul>
-        <li>
-          <Link to={CONFIG_ROUTER_PATHS.WEBSOCKET}>Страница Websocket</Link>
-        </li>
-        <li>
-          <Link to={CONFIG_ROUTER_PATHS.WEATHER}>Страница с погодой</Link>
-        </li>
-        <li>
-          <Link to={CONFIG_ROUTER_PATHS.ENDLESS_FEED}>
-            Страница с бесконечной лентой
-          </Link>
-        </li>
-      </ul>
-    </nav>
-  </div>
+  <nav>
+    <ul className="nav__list">
+      <li>
+        <Link className="nav__link" to={CONFIG_ROUTER_PATHS.WEATHER}>
+          Погода
+        </Link>
+      </li>
+      <li>
+        <Link className="nav__link" to={CONFIG_ROUTER_PATHS.WEBSOCKET}>
+          Websocket
+        </Link>
+      </li>
+      <li>
+        <Link className="nav__link" to={CONFIG_ROUTER_PATHS.ENDLESS_FEED}>
+          Лента
+        </Link>
+      </li>
+    </ul>
+  </nav>
 );

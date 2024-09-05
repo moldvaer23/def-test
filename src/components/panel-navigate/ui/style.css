@@ -1,0 +1,17 @@
+.nav__list {
+  display: flex;
+  gap: 10px;
+}
+
+.nav__link {
+  padding: 20px;
+  background-color: var(--accent-color);
+}
+
+.nav__link:hover {
+  filter: brightness(120%);
+}
+
+.nav__link:active {
+  filter: brightness(70%);
+}

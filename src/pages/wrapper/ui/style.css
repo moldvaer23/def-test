@@ -2,7 +2,11 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.header {
+  padding: 10px 0;
 }
 
 .main {
@@ -16,4 +20,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
