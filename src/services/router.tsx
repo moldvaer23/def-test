@@ -1,10 +1,10 @@
 import { createHashRouter } from "react-router-dom";
 import { CONFIG_ROUTER_PATHS } from "src/config";
 
-import { PageError } from "src/pages/error";
+import { PageNotFound } from "src/pages/not-found";
 import { PageIndex } from "src/pages/index/ui";
 import { PageWrapper } from "src/pages/wrapper";
-import { PageWeather } from "src/pages/weather/ui";
+import { PageWeather } from "src/pages/weather";
 import { PageWebsocket } from "src/pages/websocket";
 import { PageEndlessFeed } from "src/pages/endless-feed";
 
@@ -12,7 +12,7 @@ export const router = createHashRouter(
   [
     {
       element: <PageWrapper />,
-      errorElement: <PageError />,
+      errorElement: <PageNotFound />,
       children: [
         {
           index: true,

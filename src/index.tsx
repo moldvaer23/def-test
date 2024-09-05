@@ -1,7 +1,9 @@
 import React from "react";
+import { Provider } from "react-redux";
+import store from "src/services/store";
 import ReactDOM from "react-dom/client";
-import reportWebVitals from "./reportWebVitals";
 import { App } from "./app";
+import reportWebVitals from "./reportWebVitals";
 
 import "../node_modules/normalize.css/normalize.css";
 import "@fontsource/roboto/300.css";
@@ -9,7 +11,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "src/styles/variables.css";
-import "./index.css";
+import "src/styles/index.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -17,7 +19,9 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 

@@ -1,1 +1,1 @@
-export { PageWeather } from "./ui";
+export { PageWeather } from "./logic";
