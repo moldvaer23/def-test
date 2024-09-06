@@ -1,12 +1,12 @@
-.weather__form {
+.form {
   display: flex;
   gap: 5px;
 }
 
-.weather__form-input {
+.form__input {
   border: 0;
 }
 
-.weather__form-input:focus {
+.form__input:focus {
   outline: 3px solid var(--accent-color);
 }

@@ -1,14 +1,16 @@
 import { FC, useEffect, useRef, useState } from "react";
-import { PageWebsocketUi } from "../ui";
-import { CONFIG_WEBSOCKET_URL } from "../config";
+
+import "./style.css";
+
+export const CONFIG_WEBSOCKET_URL = "wss://echo.websocket.org";
 
 export const PageWebsocket: FC = () => {
   const [isConnected, setIsConnected] = useState<boolean>(false);
-  const [isConnecting, setIsConnecting] = useState<boolean>(false);
   const [receivedMessages, setReceivedMessages] = useState<string[]>([]);
   const [ws, setWs] = useState<WebSocket | null>(null);
-  const message = "Hello webSocket";
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
+
+  const message = "Hello webSocket";
 
   const onClickSend = () => {
     if (ws) ws.send(message);
@@ -18,12 +20,10 @@ export const PageWebsocket: FC = () => {
   useEffect(() => {
     /* Создаем WebSocket соединение */
     const websocket = new WebSocket(CONFIG_WEBSOCKET_URL);
-    setIsConnecting(true);
 
     /* Обработчик открытия соединения */
     websocket.onopen = () => {
       setWs(websocket);
-      setIsConnecting(false);
       setIsConnected(true);
     };
 
@@ -51,13 +51,31 @@ export const PageWebsocket: FC = () => {
   }, [receivedMessages]);
 
   return (
-    <PageWebsocketUi
-      message={message}
-      onClickSend={onClickSend}
-      receivedMessages={receivedMessages}
-      isConnected={isConnected}
-      isConnecting={isConnecting}
-      ref={messagesEndRef}
-    />
+    <div className="websocket__wrapper">
+      <div className="websocket__header">
+        <h2 className="title">WebSocket подключение</h2>
+
+        {/* Если нету подключения говорим о том что выполняем его */}
+        {!isConnected && <span>Подключаемся...</span>}
+
+        <button
+          className="button"
+          disabled={!isConnected}
+          onClick={onClickSend}>
+          Отправить {message}
+        </button>
+      </div>
+
+      <div className="websocket__messages">
+        <h3>Полученные сообщения:</h3>
+
+        <ul className="messages__list">
+          {receivedMessages.map((data, index) => (
+            <li key={index}>Received message: {data};</li>
+          ))}
+          <div ref={messagesEndRef} />
+        </ul>
+      </div>
+    </div>
   );
 };

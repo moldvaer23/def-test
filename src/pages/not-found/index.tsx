@@ -1,7 +1,7 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 import "./style.css";
-import { Link } from "react-router-dom";
 
 export const PageNotFound: FC = () => (
   <div className="page__not-found">

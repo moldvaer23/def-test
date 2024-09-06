@@ -15,9 +15,11 @@ export const PageWrapper: FC = () => {
           <Link to="/">На главную</Link>
         </header>
       )}
+
       <main className="main">
         <Outlet />
       </main>
+
       <footer className="footer">
         <PanelNavigate />
       </footer>
