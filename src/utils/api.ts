@@ -22,3 +22,12 @@ export const apiGetWeatherByCity = async (city: string) => {
     }
   }
 };
+
+/* Метод для получении информации записей бесконечной ленты */
+export const apiGetEndlessFeeds = async () =>
+  new Promise<string[]>((resolve, reject) => {
+    setTimeout(() => {
+      const arr = Array.from({ length: 10 }, () => "Запись");
+      resolve(arr);
+    }, 2000);
+  });

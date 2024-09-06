@@ -7,9 +7,11 @@ import {
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 import weatherReducer from "./slices/weather-slice";
+import endlessReducer from "./slices/endless-feed";
 
 export const rootReducer = combineReducers({
   weather: weatherReducer,
+  endlessFeed: endlessReducer,
 });
 
 const store = configureStore({

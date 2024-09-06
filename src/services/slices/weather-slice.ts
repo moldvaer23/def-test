@@ -26,11 +26,7 @@ export const getWeatherByCityThunk = createAsyncThunk(
 const weatherSlice = createSlice({
   initialState: initialState,
   name: "weather",
-  reducers: {
-    clearWeatherData: (store) => {
-      store.wetherData = null;
-    },
-  },
+  reducers: {},
   selectors: {
     getWeatherData: (state) => state.wetherData,
     getWeatherRequesting: (state) => state.requesting,
@@ -59,7 +55,5 @@ export const {
   getWeatherRequesting,
   getWeatherRequestingError,
 } = weatherSlice.selectors;
-
-export const { clearWeatherData } = weatherSlice.actions;
 
 export default weatherSlice.reducer;

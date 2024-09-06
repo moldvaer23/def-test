@@ -1,1 +1,1 @@
-export { PageEndlessFeed } from "./ui";
+export { PageEndlessFeed } from "./logic";
