@@ -18,7 +18,9 @@ export const PageEndlessFeed: FC = () => {
 
   /* При первой загрузки страницы отправляем запрос на получение записей */
   useEffect(() => {
-    dispatch(getEndlessFeeds());
+    if (feedData.length === 0) {
+      dispatch(getEndlessFeeds());
+    }
     // eslint-disable-next-line
   }, []);
 
