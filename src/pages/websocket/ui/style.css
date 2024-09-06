@@ -1,0 +1,25 @@
+.websocket__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.websocket__wrapper-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.websocket__wrapper-messages {
+  overflow-y: auto;
+  height: 300px;
+}
+
+.messages__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

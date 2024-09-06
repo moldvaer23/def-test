@@ -1,1 +1,1 @@
-export { PageWebsocket } from "./ui";
+export { PageWebsocket } from "./logic";

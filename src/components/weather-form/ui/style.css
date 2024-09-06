@@ -10,19 +10,3 @@
 .weather__form-input:focus {
   outline: 3px solid var(--accent-color);
 }
-
-.weather__form-button {
-  border: 0;
-  padding: 10px;
-  background-color: var(--accent-color);
-  color: var(--text-color);
-  cursor: pointer;
-}
-
-.weather__form-button:hover {
-  filter: brightness(130%);
-}
-
-.weather__form-button:active {
-  filter: brightness(70%);
-}

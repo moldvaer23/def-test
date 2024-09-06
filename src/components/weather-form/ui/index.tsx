@@ -19,7 +19,7 @@ export const FormWeatherUi: FC<TProps> = ({ onChange, onSubmitForm }) => (
       required
       type="text"
     />
-    <button className="weather__form-button" type="submit">
+    <button className="button" type="submit">
       Узнать
     </button>
   </form>
